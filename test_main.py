@@ -10,5 +10,10 @@
 
 """
 
+import os
+import run
+
 def test_main():
-    assert 1 == 1
+    app = run.app.test_client()
+    rv = app.get('/test')
+    assert rv.data == 'Hello World!'
